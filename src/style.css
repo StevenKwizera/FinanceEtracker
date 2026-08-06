@@ -795,6 +795,13 @@ body {
   color: #10B981;
 }
 
+.analytics-charts-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
 /* Responsive */
 @media (max-width: 900px) {
   .auth-container {
@@ -820,22 +827,171 @@ body {
 }
 
 @media (max-width: 768px) {
-  .sidebar {
-    transform: translateX(-100%);
-    transition: transform 0.3s;
+  .app-container {
+    flex-direction: column;
   }
 
-  .sidebar.open {
-    transform: translateX(0);
+  .sidebar {
+    position: relative;
+    inset: auto;
+    transform: none;
+    width: 100%;
+    height: auto;
+    padding: 1rem;
+    border-right: 0;
+    border-bottom: 1px solid #E5E7EB;
+  }
+
+  .sidebar-logo {
+    flex-direction: row;
+    align-items: baseline;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .sidebar-logo .logo-main {
+    margin-bottom: 0;
+  }
+
+  .nav-menu {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    width: 100%;
+    margin-bottom: 0.75rem;
+  }
+
+  .nav-item {
+    justify-content: center;
+    min-width: 0;
+    padding: 0.7rem 0.5rem;
+    font-size: 0.875rem;
+  }
+
+  .sign-out-btn {
+    width: 100%;
   }
 
   .main-content {
     margin-left: 0;
     width: 100%;
+    max-width: 100%;
+    padding: 1rem;
+    overflow-x: hidden;
   }
 
   .stats-grid {
     grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .stat-card,
+  .chart-section,
+  .settings-section,
+  .summary-card {
+    min-width: 0;
+    padding: 1rem;
+  }
+
+  .analytics-charts-grid,
+  .summary-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 1rem;
+  }
+
+  .header-title {
+    font-size: 1.6rem;
+    overflow-wrap: anywhere;
+  }
+
+  .transactions-header {
+    align-items: flex-start;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+  }
+
+  .transaction-item {
+    align-items: flex-start;
+    gap: 0.75rem;
+  }
+
+  .t-left,
+  .t-info {
+    min-width: 0;
+  }
+
+  .t-info h4,
+  .t-info p {
+    overflow-wrap: anywhere;
+  }
+
+  .t-right {
+    flex-shrink: 0;
+  }
+
+  .modal-overlay {
+    padding: 0.75rem;
+    align-items: flex-start;
+    overflow-y: auto;
+  }
+
+  .modal-content {
+    max-width: 100%;
+    padding: 1.25rem;
+    margin: auto 0;
+    max-height: calc(100dvh - 1.5rem);
+  }
+}
+
+@media (max-width: 480px) {
+  .auth-container {
+    gap: 1rem;
+    padding: 1rem;
+  }
+
+  .auth-hero,
+  .auth-card {
+    width: 100%;
+    padding: 1.25rem;
+    border-radius: 14px;
+  }
+
+  .auth-hero h1 {
+    font-size: 2rem;
+  }
+
+  .auth-hero p {
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .main-content {
+    padding: 0.75rem;
+  }
+
+  .nav-item {
+    flex-direction: column;
+    gap: 0.25rem;
+    text-align: center;
+  }
+
+  .stat-value,
+  .summary-value {
+    font-size: 1.35rem;
+    overflow-wrap: anywhere;
+  }
+
+  .transaction-item {
+    padding: 0.75rem;
+  }
+
+  .t-icon {
+    width: 36px;
+    height: 36px;
+    flex-shrink: 0;
+  }
+
+  .t-amount {
+    font-size: 0.85rem;
   }
 }
 
