@@ -66,7 +66,7 @@ export function renderAnalytics(element) {
       </div>
     </div>
 
-    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); gap: 1.5rem; margin-bottom: 2rem;">
+    <div class="analytics-charts-grid">
       <!-- Income vs Expense Chart -->
       <div class="chart-section">
         <h3 class="section-title">Income vs Expense</h3>
