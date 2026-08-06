@@ -81,10 +81,10 @@ export function renderAuth(element) {
               ${isLogin ? 'Sign In' : 'Create Account'}
             </button>
 
-            ${isLogin ? `
+            ${isLogin && isGoogleConfigured ? `
               <div class="divider">Or continue with</div>
               <div id="google-signin-container"></div>
-            ` : `
+            ` : !isLogin ? `
               <div class="terms-text">
                 By signing up, you agree to our <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a>
               </div>
@@ -108,7 +108,7 @@ export function renderAuth(element) {
         document.getElementById('auth-form').addEventListener('submit', handleAuth);
 
         // Initialize Google Sign-In
-        if (isLogin) {
+        if (isLogin && isGoogleConfigured) {
             initializeGoogleSignIn();
         }
 
