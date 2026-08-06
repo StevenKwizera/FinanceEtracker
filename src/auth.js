@@ -88,7 +88,7 @@ export function renderAuth(element) {
               <div class="terms-text">
                 By signing up, you agree to our <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a>
               </div>
-            `}
+            ` : ''}
           </form>
         </div>
       </div>
