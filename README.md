@@ -1,53 +1,152 @@
 # Personal Finance Tracker
 
-A responsive personal finance application for tracking income and expenses, managing transactions, reviewing analytics, and exporting financial data.
+A modern, full-featured personal finance tracker application with authentication, transaction management, analytics, and settings.
 
-## Live demo
+## 🚀 Quick Start Guide
 
-[Open Personal Finance Tracker](https://stevenkwizera.github.io/FinanceEtracker/)
+### Prerequisites
+- Node.js (v14 or higher)
+- npm (comes with Node.js)
 
-## Features
+### Installation & Running
 
-- User registration and sign-in stored locally in the browser
-- Financial dashboard with income, expenses, and balance summaries
-- Transaction creation and categorization
-- Spending and income analytics with Chart.js
-- CSV export
-- Currency and notification preferences
-- Responsive interface
-- Optional Google Sign-In integration
+1. **Install Dependencies** (First time only)
+   ```bash
+   npm install
+   ```
 
-## Technology
+2. **Start Development Server**
+   ```bash
+   npm run dev
+   ```
 
-- JavaScript
-- Vite
-- Chart.js
-- HTML and CSS
-- Browser Local Storage
-- GitHub Actions and GitHub Pages
+3. **Open in Browser**
+   - The terminal will show a URL like: `http://localhost:5173`
+   - Open this URL in your web browser
+   - The app will automatically reload when you make changes
 
-## Local development
+### 📝 Default Login Credentials
 
-```bash
-npm install
-npm run dev
+You can sign in with:
+- **Email:** `clever@gmail.com`
+- **Password:** Any password with 8+ characters
+
+Or create a new account using the "Create Account" tab.
+
+**Google Sign-In** is also available! See [Google Sign-In Setup Guide](./GOOGLE_SIGNIN_SETUP.md) for configuration instructions.
+
+## 🎯 Features
+
+- ✅ User Authentication (Sign In / Sign Up)
+- ✅ **Google Sign-In** (OAuth 2.0) - See setup guide below
+- ✅ Dashboard with financial overview
+- ✅ Transaction Management (Add, View, Categorize)
+- ✅ Analytics with Charts (Income vs Expense, Spending by Category)
+- ✅ Settings & Preferences
+- ✅ CSV Export functionality
+- ✅ Local Storage (Data persists in browser)
+
+## 📁 Project Structure
+
+```
+FinanceEtracker/
+├── src/
+│   ├── main.js          # Entry point
+│   ├── auth.js          # Authentication page
+│   ├── app.js           # Main app layout & navigation
+│   ├── dashboard.js     # Dashboard page
+│   ├── transactions.js  # Transactions page
+│   ├── analytics.js     # Analytics page
+│   ├── settings.js      # Settings page
+│   ├── data.js          # Data management (localStorage)
+│   └── style.css        # All styles
+├── index.html
+└── package.json
 ```
 
-## Production build
+## 🛠️ Available Scripts
 
-```bash
-npm run build
-```
+- `npm run dev` - Start development server
+- `npm run build` - Build for production
+- `npm run preview` - Preview production build
 
-The production bundle is written to `dist/`.
+## 📱 Usage
 
-## Demo access
+1. **Sign In / Create Account**
+   - Use the authentication page to sign in or create a new account
+   - All data is stored locally in your browser
 
-Use `clever@gmail.com` and any password containing at least eight characters, or create a new local account.
+2. **Add Transactions**
+   - Click "Add Transaction" button
+   - Choose Expense or Income
+   - Fill in amount, category, date, and description
+   - Optionally upload a receipt
 
-> This is a portfolio demonstration. Authentication and financial data are stored in the current browser and are not synchronized to a server.
+3. **View Analytics**
+   - Navigate to Analytics page
+   - View income vs expense charts
+   - See spending breakdown by category
 
-## Author
+4. **Manage Settings**
+   - Change currency preference
+   - Toggle email notifications
+   - Export transactions as CSV
+   - Change password (UI ready, Firebase integration pending)
 
-**Steven Kwizera**  
-[Portfolio](https://stevenkwizera.github.io/portfolio/) · [GitHub](https://github.com/StevenKwizera) · [LinkedIn](https://www.linkedin.com/in/steven-kwizera-2163b531b)
+## 🔄 When to Run
+
+- **Now**: You can run it immediately! Everything is set up and ready.
+- **After making changes**: The dev server will auto-reload
+- **To test**: Run anytime to test all features
+
+## 💾 Data Storage
+
+Currently using **localStorage** (browser storage):
+- Data persists between sessions
+- Data is stored locally on your device
+- To clear data: Use browser's "Clear Site Data" or Delete Account in Settings
+
+## 🔐 Google Sign-In Setup
+
+Google Sign-In is implemented and ready to use! To enable it:
+
+1. Follow the detailed setup guide: [GOOGLE_SIGNIN_SETUP.md](./GOOGLE_SIGNIN_SETUP.md)
+2. Get your Google OAuth Client ID from [Google Cloud Console](https://console.cloud.google.com/)
+3. Add it to `src/config.js`
+
+**Note:** The app works without Google Sign-In configured - you'll see a setup message. Once configured, users can sign in with their Google accounts!
+
+## 🔮 Future Firebase Integration
+
+The app is structured to easily integrate Firebase:
+- Authentication ready for Firebase Auth
+- Google Sign-In can be migrated to Firebase Auth
+- Data structure compatible with Firestore
+- File upload ready for Firebase Storage
+
+## 🐛 Troubleshooting
+
+**Port already in use?**
+- Vite will automatically try the next available port
+- Check the terminal for the actual URL
+
+**Dependencies not installing?**
+- Delete `node_modules` folder
+- Run `npm install` again
+
+**App not loading?**
+- Check browser console for errors
+- Ensure all files are saved
+- Try refreshing the page
+
+## 📞 Support
+
+If you encounter any issues:
+1. Check browser console (F12)
+2. Verify all dependencies are installed
+3. Ensure Node.js version is 14+
+
+---
+
+**Ready to go!** Just run `npm install` (if first time) then `npm run dev` and start tracking your finances! 🎉
+
